@@ -41,10 +41,10 @@ cacheSolve <- function(x, ...) {
 # with sames value as 1s in identity matrix and number of rows (squared)
 # in first iteration does not appear message "getting cached data"
 testcached <- function(m) {
-  specialm = makeCacheMatrix(m)
+  specialm <- makeCacheMatrix(m)
   for(i in 1:10) {
-    inv = cacheSolve(specialm)
-    identity = inv %*% m
+    inv <- cacheSolve(specialm)
+    identity <- inv %*% m
     message('iteration ',i,': ',sum(identity),'~', nrow(m))
     
   }
